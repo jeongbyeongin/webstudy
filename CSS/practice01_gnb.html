@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <style>
+        .wrap1 > * {                    /* Css 초기화 방법 여기부터 */
+            padding: 0;
+            margin: 0;           
+        }
+        .wrap1 a {
+            color: black;
+            text-decoration: none;
+        }                               /* CSS 초기화 방법 여기까지 */
+        /* GNB 만들기 */
+        .wrap1 > ul {
+            list-style-type: none; /* 글머리기호 없애기 */
+            display: flex;          /* 하위 메뉴(<li> 태그)를 좌우로 배치하기. */
+            width: 1440px;
+            margin: 0px auto;         /* 상하는 관심없고 좌우는 오토다 */
+            border-bottom: 1px solid gray;
+        }
+        .wrap1 > ul > li {
+            width: 145px;
+            height: 100px;
+        }
+
+        .wrap1 > ul > li > a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 100px;
+            box-sizing: border-box;
+        }
+        .wrap1 > ul > li > a:hover {
+            border-bottom: 5px solid tomato;
+        }
+
+    </style>
+    <div class="wrap1">
+        <ul>
+            <li><a href="javascript:void(0)">Models</a></li>
+            <li><a href="javascript:void(0)">Find &amp; Buy</a></li>
+            <li><a href="javascript:void(0)">Electromobility</a></li>
+            <li><a href="javascript:void(0)">Services</a></li>
+            <li><a href="javascript:void(0)">Discover</a></li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <style>
+        .wrap2 > * {
+            padding: 0px;
+            margin: 0px;
+        }
+        .wrap2 a {
+            color: black;
+            text-decoration: none;
+        }
+        .wrap2 ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;        /* 박스?글자를 페이지기준 가운데로 정렬 */
+            width: 1440px;
+            margin: 0 auto;
+            border-bottom: 1px solid gray;
+        }
+        .wrap2 > ul > li {
+            width: 145px;
+            height: 80px;
+        }
+        .wrap2 > ul > li > a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 80px;
+            box-sizing: border-box;
+            font-weight: 900;
+
+        }
+        .wrap2 > ul > li > a:hover {
+            color: limegreen;
+            border-bottom: 5px solid lightgreen;
+
+        }
+
+
+    </style>
+    <div class="wrap2">
+        <ul>
+            <li><a href="javascript:void(0)">사전</a></li>
+            <li><a href="javascript:void(0)">뉴스</a></li>
+            <li><a href="javascript:void(0)">증권</a></li>
+            <li><a href="javascript:void(0)">부동산</a></li>
+            <li><a href="javascript:void(0)">지도</a></li>
+            <li><a href="javascript:void(0)">VIBE</a></li>
+            <li><a href="javascript:void(0)">도서</a></li>
+            <li><a href="javascript:void(0)">웹툰</a></li>
+        </ul>
+
+    </div>
+
+</body>
+</html>
