@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)http://127.0.0.1:5500/webstudy/JS/18_bom.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            BOM
+            1. Browser Object Model(브라우저 객체 모델)         // 브라우저 안에 문서가 있다 .
+            2. 브라우저의 구성 요소를 객체로 처리할 수 있는 방식이다.
+                (브라우저의 구성 요소가 이미 객체로 만들어져 있다.)
+            3. 주요 BOM 객체
+                1) window  : 브라우저 창을 의미한다. 모든 BOM 객체의 최상위 객체이다. 생략할 수 있다. ( 원래는 ex) elart = window.elart)
+                2) screen  : 화면을 의미한다. 화면의 너비/높이 등을 처리한다.
+                3) history : 방문 경로를 저장한 객체이다.뒤로/앞으로 등을 처리한다.       // 인터넷에 돌아가기 같은 느낌
+                4) location : 경로를 처리하는 객체이다. URL 변경 등을 처리한다.
+        */
+    </script>
+
+    <script>
+
+        // screen 객체
+
+        console.log('화면 너비', screen.width);
+        console.log('화면 높이', screen.height);
+        console.log('실제 너비', screen.availWidth);
+        console.log('실제 높이', screen.availHeight);
+
+    </script>
+
+    <div>
+        <!-- history 객체 -->
+        <input type="button" onclick="history.back()" value="뒤로">
+        <input type="button" onclick="history.foward()" value="앞으로">
+        <input type="button" onclick="history.go(-1)" value="뒤로1번">
+        <input type="button" onclick="history.go(-2)" value="뒤로2번">
+    </div>
+
+    <div>
+        <!-- location 객체 -->
+        <input type="button" onclick="location.href=&#39;https://www.naver.com&#39;" value="네이버">
+        <input type="button" onclick="location.href=&#39;https://www.google.co.kr&#39;" value="구글">
+    </div>
+
+    <div>
+        <input type="button" id="btn_open" value="창열기">
+    </div>
+    <script>
+        /*
+            window.open(url, name, feature)
+            1. url : 열어 줄 창(파일)의 경로
+            2. name : 창 이름(생략가능)
+            3. feature(특징)
+                1) width, height                        // 열어 줄 창의 크기
+                2) top, bottom, left, right             // 열어 줄 창의 위치
+        */
+            // screen.width/2-width/2
+            // (screen.width-width)/2
+
+        document.getElementById('btn_open').addEventListener('click', ()=>{
+            // 화면의 중앙 위치 계산해서 창 열기
+            var width = 480;
+            var height = 360;
+            var left = (screen.width - width) / 2;
+            var top = (screen.height - height) / 2;
+            var feature = 'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top;
+            window.open('popup.html', '', feature);
+            
+        });
+    </script>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>

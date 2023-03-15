@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../resources/js/lib/jquery-3.6.4.min.js"></script>
+  </head>
+  <body>
+    <div id="box1">BOX1</div>
+    <script>
+      console.log($("#box1").text());
+      $("#box1").text("박스1");
+    </script>
+
+    <div id="box2">
+      <p>BOX2</p>
+    </div>
+    <script>
+      console.log($("#box2").html());
+      $("#box2").html("<h1>BOX2</h1>");
+    </script>
+
+    <div id="box3">BOX3</div>
+
+    <script>
+      $("#box3").css("color", "#c8c8c8").css("font-size", "32px");
+      $("#box3").css({
+        "background-color": "blue",
+        "text-align": "center",
+      });
+    </script>
+
+    <div>
+      <img id="img" />
+    </div>
+    <script>
+      console.log($("#img").attr("id"));
+      $("#img").attr("alt", "이미지");
+      $("#img").attr("src", "../../images/animal1.jpg");
+      $("#img").attr("width", "200px");
+    </script>
+
+    <div>
+      <a id="link">링크</a>
+    </div>
+    <script>
+      console.log($("#link").prop("id"));
+      $("#link").prop("href", "https://www.naver.com");
+      $("#link").prop("target", "_blank");
+    </script>
+
+    <div>
+      <ul id="menu">
+        <li id="kimchi">김치</li>
+      </ul>
+    </div>
+    <script>
+      var menu = $("#menu");
+      menu.prepend('<li id="cheese">치즈</li>');
+      menu.append('<li id="pizza">피자</li>');
+      menu.prepend($("<li>").attr("id", "beef").text("소고기"));
+      menu.append($("<li>").attr("id", "pork").text("돼지고기"));
+    </script>
+
+    <div>
+      <ul id="movies">
+        <li id="terminator">터미네이터</li>
+        <li id="avatar">아바타</li>
+        <li id="alien">에일리언</li>
+      </ul>
+    </div>
+    <script>
+      $("#terminator").remove();
+      $("#movies").empty();
+    </script>
+
+    <div>
+      <form id="frm">
+        <div>
+          <input type="text" placeholder="아이디" />
+        </div>
+        <div>
+          <input type="password" placeholder="비밀번호" />
+        </div>
+        <div>
+          <input type="radio" name="gender" value="male" id="male" />
+          <label for="male">남자</label>
+          <input type="radio" name="gender" value="female" id="female" />
+          <label for="female">여자</label>
+          <input type="radio" name="gender" value="none" id="none" />
+          <label for="none">선택안함</label>
+        </div>
+        <div>
+          <select>
+            <option value="">선택하세요</option>
+            <option value="서울" selected>서울</option>
+            <option value="경기">경기</option>
+            <option value="인천">인천</option>
+          </select>
+        </div>
+        <div>
+          <textarea>Hello World</textarea>
+        </div>
+      </form>
+    </div>
+    <script>
+      $("#frm :text").css("background-color", "silver");
+      $("#frm :text").prop("value", "admin");
+      $("#frm :text").val("master");
+
+      $("#frm :password").val("1234");
+    </script>
+  </body>
+</html>

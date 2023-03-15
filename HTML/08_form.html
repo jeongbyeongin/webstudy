@@ -29,7 +29,7 @@
         <input type="text" value="날씨">
         <br>
         <!-- readonly 속성 : 입력된 값을 수정할 수 없게 만듬 -->
-        <input type="text" value="영희야 사랑해" readonly>       <!-- "readonly" 생략가능 -->
+        <input type="text" value="영희야 사랑해" readonly>       <!-- "readonly" 생략가능 위쪽 required와 같이 -->
         <br>
         <!-- disable 속성 : 입력 상자를 사용할 수 없도록 만듬 -->
         <input type="text" disabled>                 <!-- "disabled" 생략가능 -->
@@ -82,7 +82,7 @@
         <input type="checkbox" name="hobbies">여행
         <br>
         <!-- value 속성 : 어떤 checkbox를 선택했는지 알기 위해서 반드시 추가해야 한다. -->
-        <!-- value에 있는 숫자를 더한 값 ex 더해서 3이 되면 운동여행 5면 운동영화이런 식 -->
+        <!-- value에 있는 숫자를 더한 값 ex) 더해서 3이 되면 운동여행 5면 운동영화이런 식 -->
         <input type="checkbox" name="hobbies" value="1">운동
         <input type="checkbox" name="hobbies" value="2">여행
         <input type="checkbox" name="hobbies" value="4">영화
@@ -126,7 +126,7 @@
     
         <!-- 8. 라벨 붙이기 : <label> 태그 -->
         <p>
-            <!-- <label for="입력요소id속성값"> -->
+            <!-- <label for="입력요소id속성값"> (체크 남,여가 같이 붙어있음, input은 체크 따로 성별 따로)-->
             <label for="male">
                 <input type="radio" name="gender" value="male" id="male">남
             </label>
@@ -250,6 +250,7 @@
         <p>
           <form method="post">
             <img src="../../images/logo_naver.png" width="150px">
+                <br>
                 <label for="ID">
                     <strong>아이디</strong><br> <input type="text">@naver.com
                 </label>
